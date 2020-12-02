@@ -8,4 +8,6 @@ const Hero = styled.header`
   justify-content: center;
 `;
 
+
+
 export default Hero;

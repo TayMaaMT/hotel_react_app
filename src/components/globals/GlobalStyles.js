@@ -37,4 +37,3 @@ p{
 `;
 
 export default Globals;
-

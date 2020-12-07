@@ -1,4 +1,4 @@
-import Room from "../globals/Room";
+import Card from "../globals/Card";
 import styled from "styled-components";
 import Title from "../globals/Title";
 import Section from "../globals/Section";
@@ -15,7 +15,7 @@ const initialState={
           <Title title="our rooms" center />
           <RoomsCenter>
             {roomState.rooms.map(room => {
-              return <Room key={room.id} room={room} />;
+              return <Card key={room.id} room={room} />;
             })}
           </RoomsCenter>
         </Section>

@@ -3,6 +3,7 @@ export const setColor = {
   primaryColor: "#FFDF80",
   mainWhite: "#fff",
   mainBlack: "#222",
+  mainGray:"#000",
   mainGrey: "#ececec",
   lightGrey: "#f7f7f7"
 };

@@ -1,4 +1,5 @@
 import { SmallBtn } from "./Button";
+import StyleLink from "./StyleLink";
 import styled from "styled-components";
 import {
   setRem,
@@ -8,6 +9,7 @@ import {
   setShadow,
   setBorder
 } from "../../styles";
+
 const Room = ({ className, room }) => {
     const { img = "", title = "", info = "", price = 0 } = room;
     return (
@@ -19,7 +21,7 @@ const Room = ({ className, room }) => {
         <div className="room-info">
           <h4>{title}</h4>
           <p>{info}</p>
-          <SmallBtn>Hello</SmallBtn>
+          <StyleLink to="/hotel" ><SmallBtn>Hello</SmallBtn></StyleLink>
         </div>
       </article>
     );
@@ -71,5 +73,6 @@ const Room = ({ className, room }) => {
   &:hover {
     ${setShadow.dark};
   }
-`;
+`
+;
   

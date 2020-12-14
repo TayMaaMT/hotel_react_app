@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { setRem, setColor} from "../../styles";
-const Table = ({ icon,title,data}) => {
+const Item = ({ icon,title,data=""}) => {
 return (
     <TableConatin>
          <table>
-  <tr>
-<td><img src={icon} alt="icon" />{title}</td>
-    <td>{data}</td>
-  </tr>
-</table>
+            <tr>
+              <td><img src={icon} alt="icon" />{title}</td>
+              <td className="data">{data}</td>
+            </tr>
+        </table>
     </TableConatin>
 );
 };
@@ -34,7 +34,10 @@ th, td {
       float:left;
       margin:0 20px 0 0;
   }
+  .data{
+    text-align:right;
+  }
 
 `;
 
-export default Table;
+export default Item;

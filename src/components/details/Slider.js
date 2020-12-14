@@ -1,14 +1,8 @@
-
-import room1 from "../../images/room1.jpeg";
-import room2 from "../../images/room2.jpeg";
-import room3 from "../../images/room3.jpeg";
-
 import Slider from "react-slick";
-// import Section from "../globals/Section";
 import { setColor, media, setRem,setBorder } from "../../styles";
-const rooms = [room1,room2,room3]
-const  SliderImg =()=>  {
 
+const  SliderImg =({img})=>  {
+	const rooms = img?img:[]
 		const settings = {
 			customPaging: function (i) {
 				return (<img src={rooms[i]} alt="img slider"/>);
@@ -27,9 +21,9 @@ const  SliderImg =()=>  {
 				<style>{cssstyle}</style>
                
 				<Slider {...settings}>
-                {rooms.map(room => {
-              return( <div>
-                            <img src={room} alt="img slider" />
+                {rooms.map((room,id) => {
+              return( <div key={id}>
+                            <img  src={room} alt="img slider" />
                         </div>)
                         })}
 				</Slider>

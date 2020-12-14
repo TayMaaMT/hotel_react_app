@@ -12,7 +12,6 @@ export default styled(Title)`
   ${setFont.slanted};
   margin-left:${props=>setRem(props.left?100:0)};
   text-align: ${props => (props.center ? "center" : "left")};
-
 `
 
 ;

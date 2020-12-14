@@ -1,21 +1,31 @@
-import Room from "../globals/Room";
+import Card from "../globals/Card";
 import styled from "styled-components";
 import Title from "../globals/Title";
 import Section from "../globals/Section";
-import rooms from "./rooms-data";
+// import rooms from "./rooms-data";
 import { setColor, media, setRem } from "../../styles";
-import { useState } from 'react';
-const initialState={
-    rooms
-}
+import { useState ,useEffect} from 'react';
+import axios from "axios";
+
+// const initialState={
+//     rooms
+// }
  const Rooms=()=> {
-    const [roomState, setRooms] = useState(initialState);
+    const [roomState, setRooms] = useState([]);
+    
+    useEffect(() => {
+      const callApiRooms = async()=>{
+        const {data} = await axios.get('http://localhost:3000/api/hotel/room');
+        setRooms(data);
+      }
+      callApiRooms();
+    },[]);
       return (
         <Section color={setColor.lightGrey}>
           <Title title="our rooms" center />
           <RoomsCenter>
-            {roomState.rooms.map(room => {
-              return <Room key={room.id} room={room} />;
+            {roomState.map(room => {
+              return <Card key={room.id} room={room} />;
             })}
           </RoomsCenter>
         </Section>

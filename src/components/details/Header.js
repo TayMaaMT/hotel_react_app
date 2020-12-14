@@ -10,23 +10,33 @@ import {
   media
 } from "../../styles";
 import styled from "styled-components";
-import room1 from "../../images/room1.jpeg";
+import { useState ,useEffect} from 'react';
+import axios from "axios";
+import {useParams} from 'react-router-dom';
 
-const Realtor = {
-    img : room1,
-    title :"Realtor name",
-    info : ` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit aut
-      quos ea optio ipsa`}
-const Header = () => {
+const Header = ({img,title}) => {
+  const [OwnerState, setOwner] = useState({});
+  const {owner_id} =useParams();
+  console.log(title);
+  useEffect(() => {
+    const callApiOwner = async()=>{
+      const {data} = await axios.post('http://localhost:3000/api/hotel/findOwner', {
+        id:owner_id,
+      });
+      setOwner({title:data[0].username,img1:data[0].picture,description:data[0].information,phone:data[0].phone});
+    }
+    callApiOwner();
+
+  },[owner_id]);
     return (
       <Section>
-          <Title title="Basic Economy" left /> 
+          <Title title={title} left /> 
         <HeaderCenter>
           <div className="about-img">
-            <Slider/>
+            <Slider img={img}/>
           </div>
           <div className="about-info">
-          <Card room={Realtor}/>
+          <Card room={OwnerState}/>
           </div>
         </HeaderCenter>
       </Section>

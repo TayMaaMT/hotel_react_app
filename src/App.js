@@ -6,13 +6,14 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+
 function App() {
   return (
     <>
     <GlobalStyles/>
     <Router>
       <Switch>
-        <Route path="/hotel">
+        <Route path="/hotel/:owner_id/:id">
           <Details />
         </Route>
         <Route path="/">

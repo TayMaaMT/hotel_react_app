@@ -11,17 +11,28 @@ import {
 } from "../../styles";
 
 const Room = ({ className, room }) => {
-    const { img = "", title = "", info = "", price = 0 } = room;
+    const { img1 = "", title = "", description = "", price ,id,owner_id,phone} = room;
+
     return (
       <article className={className}>
         <div className="img-container">
-          <img src={img} alt="single room" />
-          <div className="price">${price}</div>
+          <img src={img1} alt="single room" />
+          {
+            price? <div className="price">${price}</div>:<div className="price">{phone}</div>
+          }
+           
         </div>
         <div className="room-info">
           <h4>{title}</h4>
-          <p>{info}</p>
-          <StyleLink to="/hotel" ><SmallBtn>Hello</SmallBtn></StyleLink>
+          <p>{description}</p>
+          {
+            price?<StyleLink to={`/hotel/${owner_id}/${id}`} ><SmallBtn>More</SmallBtn></StyleLink>:(
+              <>
+                <SmallBtn>Make Inquiry</SmallBtn>
+              </>
+            )
+          }
+          
         </div>
       </article>
     );

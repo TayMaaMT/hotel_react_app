@@ -11,7 +11,7 @@ const Details = () => {
 
   useEffect(() => {
     const callApiOwner = async()=>{
-      const {data} = await axios.post('http://localhost:3000/api/hotel/findRoom', {
+      const {data} = await axios.post('https://taymaa-hotel.herokuapp.com/api/hotel/findRoom', {
         id,
       });
       const room = data[0];

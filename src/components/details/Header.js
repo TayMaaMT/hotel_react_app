@@ -8,7 +8,7 @@ import {
   setBorder,
   setColor,
   media
-} from "../../styles";
+} from "../../style/styles";
 import styled from "styled-components";
 import { useState ,useEffect} from 'react';
 import axios from "axios";
@@ -49,12 +49,36 @@ const Header = ({img,title}) => {
     padding: ${setRem(30)};
   }
   .about-img {
+    width: 90vw;
+    margin: 0 auto;
+
+  ${media.tablet`
+  display:grid;
+  width:90vw;
+
+  grid-column-gap:${setRem(32)};
+
+  `};
+  ${media.desktop`
+  
+  width:60vw;
+  max-width:1170px;
+  img {
+    width: 100%;
+    display: block;
+    ${setBorder({ width: setRem(6), color: setColor.primaryColor })}
+  }
+  `};
+  ${media.large`
+    grid-template-columns:repeat(3,1fr);
     img {
       width: 100%;
       display: block;
       ${setBorder({ width: setRem(6), color: setColor.primaryColor })}
     }
+  `};
   }
+  
   h3{
     margin-left:${setRem(100)}
   }

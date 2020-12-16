@@ -4,7 +4,8 @@ import {
   setRem,
   setColor,
   setLetterSpacing,
-  setFont
+  setFont,
+  media
 } from "../../style/styles";
 import styled from "styled-components";
 import square from '../../images/squares.svg';
@@ -44,11 +45,14 @@ const Data = ({details}) => {
   };
   const DataContainer = styled.div`
     margin:0 auto;
-    width: 80vw;
+    width:${setRem(400)};
     display:flex;
     flex-wrap:wrap;
     justify-content:space-around;
     background: ${setColor.lightGrey};
+    ${media.tablet`
+    width: 80vw;
+    `};
     .left,.right{
        
         display:flex;

@@ -45,7 +45,7 @@ const sizes = {
   large: 1200,
   desktop: 992,
   tablet: 768,
-  phone: 576
+  phone: 300
 };
 
 export const media = Object.keys(sizes).reduce((acc, label) => {

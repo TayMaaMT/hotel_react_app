@@ -20,7 +20,7 @@ const Header = ({img,title}) => {
   console.log(title);
   useEffect(() => {
     const callApiOwner = async()=>{
-      const {data} = await axios.post('http://localhost:3000/api/hotel/findOwner', {
+      const {data} = await axios.post('https://taymaa-hotel.herokuapp.com/api/hotel/findOwner', {
         id:owner_id,
       });
       setOwner({title:data[0].username,img1:data[0].picture,description:data[0].information,phone:data[0].phone});

@@ -8,8 +8,8 @@ const Header = () => {
     <Hero img={aboutImg}>
        <Banner
         greeting="welcome to"
-        title="beachwalk "
-        text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi provident eos sapiente deleniti in quisquam."
+        title="Beach Hotel "
+        text="Across the world, our hotels anchor a community of travelers united in the pursuit of inspired environments, genuine local culture ."
       >
          <PrimaryBtn t="1rem">view details</PrimaryBtn>
      </Banner>

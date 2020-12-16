@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { setRem, setColor} from "../../styles";
+import { setRem, setColor} from "../../style/styles";
 const Item = ({ icon,title,data=""}) => {
 return (
     <TableConatin>
          <table>
-            <tr>
+           <tbody></tbody>
+           <thead>
+           <tr>
               <td><img src={icon} alt="icon" />{title}</td>
               <td className="data">{data}</td>
             </tr>
+           </thead>
         </table>
     </TableConatin>
 );
@@ -19,7 +22,7 @@ margin:0 auto;
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: ${setRem(400)};
     
 }
 th, td {

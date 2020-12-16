@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import {
     setColor,
  
-  } from "../../styles";
-const StyledLink = styled(Link)`
+  } from "../../style/styles";
+ const StyledLink= (props) => <Styled {...props} />
+const Styled = styled(Link)`
     text-decoration: none;
     color:${setColor.mainWhite};
     &:hover, &:link, &:active {
@@ -14,4 +15,4 @@ const StyledLink = styled(Link)`
     }
 `;
 
-export default (props) => <StyledLink {...props} />;
+export default StyledLink;

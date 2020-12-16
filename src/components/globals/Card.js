@@ -8,7 +8,7 @@ import {
   setColor,
   setShadow,
   setBorder
-} from "../../styles";
+} from "../../style/styles";
 
 const Room = ({ className, room }) => {
     const { img1 = "", title = "", description = "", price ,id,owner_id,phone} = room;
@@ -26,9 +26,9 @@ const Room = ({ className, room }) => {
           <h4>{title}</h4>
           <p>{description}</p>
           {
-            price?<StyleLink to={`/hotel/${owner_id}/${id}`} ><SmallBtn>More</SmallBtn></StyleLink>:(
+            price?<StyleLink to={`/hotel/${owner_id}/${id}`} ><SmallBtn >More</SmallBtn></StyleLink>:(
               <>
-                <SmallBtn>Make Inquiry</SmallBtn>
+                <SmallBtn >Make Inquiry</SmallBtn>
               </>
             )
           }
@@ -71,6 +71,7 @@ const Room = ({ className, room }) => {
   }
   .room-info {
     padding: ${setRem()};
+    
     h4 {
       text-transform: capitalize;
       ${setLetterSpacing(1)};
@@ -81,6 +82,7 @@ const Room = ({ className, room }) => {
   }
   ${setShadow.light};
   ${setTransition()};
+
   &:hover {
     ${setShadow.dark};
   }

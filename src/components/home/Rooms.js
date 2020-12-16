@@ -2,20 +2,14 @@ import Card from "../globals/Card";
 import styled from "styled-components";
 import Title from "../globals/Title";
 import Section from "../globals/Section";
-// import rooms from "./rooms-data";
-import { setColor, media, setRem } from "../../styles";
+import { setColor, media, setRem } from "../../style/styles";
 import { useState ,useEffect} from 'react';
 import axios from "axios";
-
-// const initialState={
-//     rooms
-// }
  const Rooms=()=> {
     const [roomState, setRooms] = useState([]);
-    
     useEffect(() => {
       const callApiRooms = async()=>{
-        const {data} = await axios.get('http://localhost:3000/api/hotel/room');
+        const {data} = await axios.get('https://taymaa-hotel.herokuapp.com/api/hotel/room');
         setRooms(data);
       }
       callApiRooms();

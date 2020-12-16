@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { setColor, setFont } from "../../styles";
+import { setColor, setFont } from "../../style/styles";
 const Globals = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
 *{

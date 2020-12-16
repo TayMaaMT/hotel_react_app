@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import { setColor, media, setRem,setBorder } from "../../styles";
+import { setColor } from "../../style/styles";
 
 const  SliderImg =({img})=>  {
 	const rooms = img?img:[]
@@ -36,7 +36,7 @@ const cssstyle = `
 
 .container {
 	margin: 0 auto;
-	padding: 0px 40px 40px 40px;
+	padding: 0px 0px 40px 0px;
 	width: 60vw;
   }
 .slick-next:before, .slick-prev:before {
@@ -48,16 +48,12 @@ const cssstyle = `
 .slick-thumb li {
 	width: 15%;
     height: 45px;
-		cursor: pointer;
+	cursor: pointer;
 }
 img {
     max-width: 100%;
-    margin: 0 0 ${setRem(1.45)};
     padding: 0;
 }
 
-${media.tablet` width: 90vw;
-${setBorder({ width: "6px", color: setColor.primaryColor })};
-`}
 `;
 export default SliderImg;

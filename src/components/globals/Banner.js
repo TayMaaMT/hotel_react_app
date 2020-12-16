@@ -7,7 +7,7 @@ import {
     setBorder,
     media,
     fadeIn
-  } from "../../styles";
+  } from "../../style/styles";
 
 
 const Banner = ({ className, title, text, children, greeting }) => {

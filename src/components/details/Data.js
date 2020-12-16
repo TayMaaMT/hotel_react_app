@@ -5,7 +5,7 @@ import {
   setColor,
   setLetterSpacing,
   setFont
-} from "../../styles";
+} from "../../style/styles";
 import styled from "styled-components";
 import square from '../../images/squares.svg';
 import bath from '../../images/bath.svg';
@@ -43,7 +43,6 @@ const Data = ({details}) => {
     );
   };
   const DataContainer = styled.div`
-    display:flex;
     margin:0 auto;
     width: 80vw;
     display:flex;
@@ -51,11 +50,15 @@ const Data = ({details}) => {
     justify-content:space-around;
     background: ${setColor.lightGrey};
     .left,.right{
-        width:40%;
+       
+        display:flex;
+        flex-direction:column;
+        flex-wrap:wrap;
+ 
     }
     p{
         font-size:${setRem(15)};
-        padding:${setRem(70)};
+        padding:${setRem(50)};
         ${setLetterSpacing(1)};
         ${setFont.main};
     }

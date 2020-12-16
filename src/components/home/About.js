@@ -8,7 +8,7 @@ import {
   setColor,
   setLetterSpacing,
   media
-} from "../../styles";
+} from "../../style/styles";
 import { PrimaryBtn } from "../globals/Button";
 import styled from "styled-components";
 
@@ -22,10 +22,7 @@ const About = () => {
           <div className="about-info">
             <Title title="about us" />
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit aut
-              quos ea optio ipsa, molestiae officiis, voluptates itaque blanditiis
-              nostrum est fugiat, architecto odit at atque obcaecati nihil!
-              Cupiditate, error.
+            For a quarter century, we’ve been at the forefront of a movement in travel by curating a global collection of independent, design-driven hotels that function as social hubs and spaces for purposeful experiences.
             </p>
             <PrimaryBtn>read more</PrimaryBtn>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { setRem, setFont, setLetterSpacing } from "../../styles";
+import { setRem, setFont, setLetterSpacing } from "../../style/styles";
 const Title = ({ className, title, center ,left=200}) => {
   return <h3 className={className}>{title}</h3>;
 };
